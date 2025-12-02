@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controle de Feedback de Colaboradores</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Importar CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+    <h1>Bem-vindo</h1>
+    <p>Entre para acessar o Controle de Feedback de Colaboradores</p>
+    <input type="text" id="username" placeholder="Digite seu usuário">
+    <input type="password" id="password" placeholder="Digite sua senha">
+    <button onclick="login()">Entrar</button>
+</div>
+
+<!-- SITE -->
+<div id="main-site">
+    <nav>
+        <a href="#registrar">Registrar Feedback</a>
+        <a href="#lista">Feedbacks Recebidos</a>
+    </nav>
+
+    <header>
+        <h1>Controle de Feedback de Colaboradores</h1>
+        <p>Sistema para registro e acompanhamento de melhorias internas</p>
+    </header>
+
+    <div class="container" id="registrar">
+        
+        <div id="msg-sucesso">Feedback registrado com sucesso!</div>
+
+        <h2>Registrar Novo Feedback</h2>
+
+        <label>Nome do Colaborador:</label>
+        <input type="text" id="input-nome" placeholder="Digite o nome...">
+
+        <label>Tipo de Feedback:</label>
+        <select id="input-tipo">
+            <option>Sugestão de melhoria</option>
+            <option>Ambiente de trabalho</option>
+            <option>Processos internos</option>
+            <option>Outro</option>
+        </select>
+
+        <label>Prioridade:</label>
+        <select id="input-prioridade">
+            <option>Baixa</option>
+            <option>Média</option>
+            <option>Alta</option>
+        </select>
+
+        <label>Descrição do Feedback:</label>
+        <textarea id="input-descricao" rows="5" placeholder="Descreva o feedback..."></textarea>
+
+        <button onclick="adicionarFeedback()">Enviar Feedback</button>
+    </div>
+
+    <div class="container" id="lista">
+        <h2>Feedbacks Recebidos</h2>
+
+        <div class="feedback-card prioridade-media">
+            <strong>Maria Souza</strong> – Ambiente de trabalho  
+            <p><strong>Prioridade:</strong> Média</p>
+            <p>“A sala de reuniões poderia ter mais ventilação.”</p>
+            <div class="vote-container">
+                <div class="vote-box">
+                    <button class="vote-btn" onclick="votarUp(this)"><div class="arrow-up"></div></button>
+                    <span class="vote-count">12</span>
+                </div>
+                <div class="vote-box">
+                    <button class="vote-btn" onclick="votarDown(this)"><div class="arrow-down"></div></button>
+                    <span class="vote-count">3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>© 2025 - Sistema de Feedback de Colaboradores</footer>
+</div>
+
+<!-- Importar JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
